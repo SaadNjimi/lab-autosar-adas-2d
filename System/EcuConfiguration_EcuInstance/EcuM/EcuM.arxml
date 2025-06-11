@@ -1,0 +1,2644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Description: Internal behavior file for 'EcuM' BSW module (AUTOSAR 4.3.0). -->
+<!-- Created with SystemDesk 5.6.0.13023 -->
+<!-- Copyright 2018 by dSPACE GmbH. All rights reserved. -->
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="">
+			<SHORT-NAME>AUTOSAR_EcuM</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="">
+					<SHORT-NAME>BswImplementations</SHORT-NAME>
+					<ELEMENTS>
+						<BSW-IMPLEMENTATION UUID="">
+							<SHORT-NAME>BswImpl_EcuM</SHORT-NAME>
+							<ADMIN-DATA>
+							</ADMIN-DATA>					  
+							<CODE-DESCRIPTORS>
+								<CODE UUID="">
+									<SHORT-NAME>EcuM</SHORT-NAME>
+									<ARTIFACT-DESCRIPTORS>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM.c</SHORT-LABEL>
+											<CATEGORY>SWSRC</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Callout.c</SHORT-LABEL>
+											<CATEGORY>SWSRC</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_PBcfg.c</SHORT-LABEL>
+											<CATEGORY>SWSRC</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_States.c</SHORT-LABEL>
+											<CATEGORY>SWSRC</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Callout.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Cbk.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Cfg.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Types.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+										<AUTOSAR-ENGINEERING-OBJECT>
+											<SHORT-LABEL>EcuM_Internal.h</SHORT-LABEL>
+											<CATEGORY>SWHDR</CATEGORY>
+										</AUTOSAR-ENGINEERING-OBJECT>
+
+									</ARTIFACT-DESCRIPTORS>
+								</CODE>
+							</CODE-DESCRIPTORS>
+							<GENERATED-ARTIFACTS>
+								<DEPENDENCY-ON-ARTIFACT UUID="">
+									<SHORT-NAME>EcuM_PlatformDescription</SHORT-NAME>
+									<ARTIFACT-DESCRIPTOR>
+										<SHORT-LABEL>EcuM_PlatformDescription.xml</SHORT-LABEL>
+										<CATEGORY>OTHER</CATEGORY>
+									</ARTIFACT-DESCRIPTOR>
+								</DEPENDENCY-ON-ARTIFACT>
+
+							</GENERATED-ARTIFACTS>
+							<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+							<RESOURCE-CONSUMPTION UUID="">
+								<SHORT-NAME>ResourceConsumption</SHORT-NAME>
+							</RESOURCE-CONSUMPTION>
+							<SW-VERSION>1.0.0.0</SW-VERSION>
+							<SWC-BSW-MAPPING-REF DEST="SWC-BSW-MAPPING">/AUTOSAR_EcuM/SwcBswMappings/SBM_EcuM</SWC-BSW-MAPPING-REF>
+							<BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM</BEHAVIOR-REF>
+						</BSW-IMPLEMENTATION>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE UUID="">
+					<SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+					<ELEMENTS>
+						<BSW-MODULE-DESCRIPTION UUID="">
+							<SHORT-NAME>EcuM</SHORT-NAME>
+							<IMPLEMENTED-ENTRYS>
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_MainFunction</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ClearWakeupEvent</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetBootTarget</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetExpiredWakeupEvents</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetLastShutdownTarget</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetPendingWakeupEvents</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetShutdownTarget</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetState</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetStatusOfWakeupSource</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetValidatedWakeupEvents</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Init</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllPostRUNRequests</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllRUNRequests</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleasePOST_RUN</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleaseRUN</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestPOST_RUN</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestRUN</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectBootTarget</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectShutdownTarget</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Shutdown</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+								<BSW-MODULE-ENTRY-REF-CONDITIONAL>
+									<BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_StartupTwo</BSW-MODULE-ENTRY-REF>
+								</BSW-MODULE-ENTRY-REF-CONDITIONAL>									
+							</IMPLEMENTED-ENTRYS>
+							<PROVIDED-CLIENT-SERVER-ENTRYS>				
+							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_ClearWakeupEvent</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ClearWakeupEvent</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>false</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetBootTarget</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetBootTarget</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetExpiredWakeupEvents</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetExpiredWakeupEvents</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>false</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetLastShutdownTarget</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetLastShutdownTarget</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetPendingWakeupEvents</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetPendingWakeupEvents</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>false</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetShutdownTarget</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetShutdownTarget</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetState</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetState</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetStatusOfWakeupSource</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetStatusOfWakeupSource</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_GetValidatedWakeupEvents</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetValidatedWakeupEvents</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>false</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_Init</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Init</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_KillAllPostRUNRequests</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllPostRUNRequests</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_KillAllRUNRequests</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllRUNRequests</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_ReleasePOST_RUN</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleasePOST_RUN</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_ReleaseRUN</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleaseRUN</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_RequestPOST_RUN</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestPOST_RUN</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_RequestRUN</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestRUN</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_SelectBootTarget</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectBootTarget</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_SelectShutdownTarget</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectShutdownTarget</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_Shutdown</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Shutdown</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>true</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>							
+								<BSW-MODULE-CLIENT-SERVER-ENTRY>
+									<SHORT-NAME>CSE_EcuM_StartupTwo</SHORT-NAME>
+									<ENCAPSULATED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_StartupTwo</ENCAPSULATED-ENTRY-REF>
+									<IS-REENTRANT>false</IS-REENTRANT>
+									<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+								</BSW-MODULE-CLIENT-SERVER-ENTRY>
+							</PROVIDED-CLIENT-SERVER-ENTRYS>
+
+							<INTERNAL-BEHAVIORS>
+								<BSW-INTERNAL-BEHAVIOR UUID="">
+									<SHORT-NAME>IB_EcuM</SHORT-NAME>
+									<EXCLUSIVE-AREAS>
+									</EXCLUSIVE-AREAS>
+									<ENTITYS>
+										<BSW-SCHEDULABLE-ENTITY UUID="">
+											<SHORT-NAME>EcuM_MainFunction</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_MainFunction</IMPLEMENTED-ENTRY-REF>
+										</BSW-SCHEDULABLE-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_ClearWakeupEvent</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ClearWakeupEvent</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetBootTarget</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetBootTarget</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetExpiredWakeupEvents</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetExpiredWakeupEvents</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetLastShutdownTarget</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetLastShutdownTarget</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetPendingWakeupEvents</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetPendingWakeupEvents</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetShutdownTarget</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetShutdownTarget</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetState</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetState</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetStatusOfWakeupSource</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetStatusOfWakeupSource</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_GetValidatedWakeupEvents</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_GetValidatedWakeupEvents</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_Init</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Init</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_KillAllPostRUNRequests</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllPostRUNRequests</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_KillAllRUNRequests</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_KillAllRUNRequests</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_ReleasePOST_RUN</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleasePOST_RUN</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_ReleaseRUN</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_ReleaseRUN</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_RequestPOST_RUN</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestPOST_RUN</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_RequestRUN</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_RequestRUN</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_SelectBootTarget</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectBootTarget</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_SelectShutdownTarget</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_SelectShutdownTarget</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_Shutdown</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_Shutdown</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>
+										<BSW-CALLED-ENTITY>
+											<SHORT-NAME>EcuM_StartupTwo</SHORT-NAME>
+											<IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_EcuM/BswModuleEntrys/EcuM_StartupTwo</IMPLEMENTED-ENTRY-REF>
+										</BSW-CALLED-ENTITY>					
+									</ENTITYS>										
+									<EVENTS>
+									
+										<BSW-TIMING-EVENT UUID="">
+											<SHORT-NAME>EcuM_MainFunction_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_MainFunction</STARTS-ON-EVENT-REF>
+											<PERIOD>0.001</PERIOD>
+										</BSW-TIMING-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_ClearWakeupEvent_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_ClearWakeupEvent</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_ClearWakeupEvent</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetBootTarget_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetBootTarget</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetBootTarget</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetExpiredWakeupEvents_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetExpiredWakeupEvents</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetExpiredWakeupEvents</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetLastShutdownTarget_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetLastShutdownTarget</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetLastShutdownTarget</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetPendingWakeupEvents_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetPendingWakeupEvents</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetPendingWakeupEvents</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetShutdownTarget_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetShutdownTarget</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetShutdownTarget</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetState_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetState</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetState</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetStatusOfWakeupSource_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetStatusOfWakeupSource</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetStatusOfWakeupSource</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_GetValidatedWakeupEvents_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_GetValidatedWakeupEvents</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_GetValidatedWakeupEvents</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_Init_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_Init</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_Init</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_KillAllPostRUNRequests_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_KillAllPostRUNRequests</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_KillAllPostRUNRequests</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_KillAllRUNRequests_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_KillAllRUNRequests</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_KillAllRUNRequests</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_ReleasePOST_RUN_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_ReleasePOST_RUN</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_ReleasePOST_RUN</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_ReleaseRUN_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_ReleaseRUN</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_ReleaseRUN</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_RequestPOST_RUN_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_RequestPOST_RUN</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_RequestPOST_RUN</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_RequestRUN_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_RequestRUN</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_RequestRUN</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_SelectBootTarget_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_SelectBootTarget</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_SelectBootTarget</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_SelectShutdownTarget_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_SelectShutdownTarget</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_SelectShutdownTarget</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_Shutdown_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_Shutdown</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_Shutdown</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+										<BSW-OPERATION-INVOKED-EVENT>
+											<SHORT-NAME>EcuM_StartupTwo_Event</SHORT-NAME>
+											<STARTS-ON-EVENT-REF DEST="BSW-CALLED-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_StartupTwo</STARTS-ON-EVENT-REF>
+											<ENTRY-REF DEST="BSW-MODULE-CLIENT-SERVER-ENTRY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/CSE_EcuM_StartupTwo</ENTRY-REF>
+										</BSW-OPERATION-INVOKED-EVENT>
+									</EVENTS>
+								</BSW-INTERNAL-BEHAVIOR>
+							</INTERNAL-BEHAVIORS>
+						</BSW-MODULE-DESCRIPTION>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE UUID="">
+					<SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+					<ELEMENTS>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_MainFunction</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_MainFunction</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">The purpose of this service is to implement all activities of the ECU State Manager while the OS is up and running.</L-2>
+							</DESC>
+							<SERVICE-ID>24</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+							<CALL-TYPE>SCHEDULED</CALL-TYPE>
+							<EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>								
+						</BSW-MODULE-ENTRY>
+
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_ClearWakeupEvent</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_ClearWakeupEvent</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Clears wakeup events.</L-2>
+							</DESC>
+							<SERVICE-ID>22</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>sources</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Events to be cleared</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupSourceType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetBootTarget</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetBootTarget</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">EcuM_GetBootTarget returns the current boot target - see EcuM_SelectBootTarget. EcuM_GetBootTarget is part of the ECU Manager Module port interface.</L-2>
+							</DESC>
+							<SERVICE-ID>19</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>target</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The currently selected boot target.</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_BootTargetType</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetExpiredWakeupEvents</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetExpiredWakeupEvents</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Gets expired wakeup events.</L-2>
+							</DESC>
+							<SERVICE-ID>25</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>EcuM_WakeupSourceType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupSourceType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetLastShutdownTarget</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetLastShutdownTarget</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">EcuM_GetLastShutdownTarget returns the shutdown target of the previous shutdown process. EcuM_GetLastShutdownTarget is part of the ECU Manager Module port interface.</L-2>
+							</DESC>
+							<SERVICE-ID>8</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>shutdownTarget</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">One of these values is returned: *	ECUM_STATE_SLEEP *	ECUM_STATE_RESET *	ECUM_STATE_OFF</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>sleepMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the out parameter \"shutdownTarget\" is ECUM_STATE_SLEEP, sleepMode tells which of the configured sleep modes was actually chosen. If \"shutdownTarget\" is ECUM_STATE_RESET, sleepMode tells which of the configured reset modes was actually chosen.</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetPendingWakeupEvents</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetPendingWakeupEvents</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Gets pending wakeup events.</L-2>
+							</DESC>
+							<SERVICE-ID>13</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>EcuM_WakeupSourceType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupSourceType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetShutdownTarget</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetShutdownTarget</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">EcuM_GetShutdownTarget returns the currently selected shutdown target as set by EcuM_SelectShutdownTarget. EcuM_GetShutdownTarget is part of the ECU Manager Module port interface.</L-2>
+							</DESC>
+							<SERVICE-ID>9</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>shutdownTarget</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">One of these values is returned: *	ECUM_STATE_SLEEP *	ECUM_STATE_RESET *	ECUM_STATE_OFF</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>sleepMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the out parameter \"shutdownTarget\" is ECUM_STATE_SLEEP, sleepMode tells which of the configured sleep modes was actually chosen. If \"shutdownTarget\" is ECUM_STATE_RESET, sleepMode tells which of the configured reset modes was actually chosen.</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetState</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetState</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Gets a state.</L-2>
+							</DESC>
+							<SERVICE-ID>7</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>state</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The value of the internal state variable.</L-2>
+									</DESC>
+									<CATEGORY>DATA_REFERENCE</CATEGORY>
+									<DIRECTION>OUT</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<SW-POINTER-TARGET-PROPS>
+													<TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+													<SW-DATA-DEF-PROPS>
+														<SW-DATA-DEF-PROPS-VARIANTS>
+															<SW-DATA-DEF-PROPS-CONDITIONAL>
+																<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</IMPLEMENTATION-DATA-TYPE-REF>
+															</SW-DATA-DEF-PROPS-CONDITIONAL>
+														</SW-DATA-DEF-PROPS-VARIANTS>
+													</SW-DATA-DEF-PROPS>
+												</SW-POINTER-TARGET-PROPS>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetStatusOfWakeupSource</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetStatusOfWakeupSource</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">The sum status shall be computed according to the following algorithm: If (EcuM_GetValidatedWakeupEvents() AND sources) is not 0 then return ECUM_WKSTATUS_VALIDATED. If (EcuM_GetPendingWakeupEvents() AND sources) is not 0 then return ECUM_WKSTATUS_PENDING. If (EcuM_GetExpiredWakeupEvents() AND sources) is not 0 then return ECUM_WKSTATUS_EXPIRED. Otherwise, return ECUM_WKSTATUS_NONE.</L-2>
+							</DESC>
+							<SERVICE-ID>23</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>EcuM_WakeupStatusType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupStatusType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>sources</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The sources for which the status is returned</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupSourceType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_GetValidatedWakeupEvents</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_GetValidatedWakeupEvents</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Gets validated wakeup events.</L-2>
+							</DESC>
+							<SERVICE-ID>21</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>EcuM_WakeupSourceType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_WakeupSourceType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_Init</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_Init</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Initializes the ECU state manager and carries out the startup procedure. The function will never return (it calls StartOS)</L-2>
+							</DESC>
+							<SERVICE-ID>1</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_KillAllPostRUNRequests</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_KillAllPostRUNRequests</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">This function unconditionally releases all pending requests to PostRUN.</L-2>
+							</DESC>
+							<SERVICE-ID>42</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_KillAllRUNRequests</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_KillAllRUNRequests</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">The benefit of this function over an ECU reset is that the shutdown sequence is executed, which e.g. takes care of writing back NV memory contents.</L-2>
+							</DESC>
+							<SERVICE-ID>5</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_ReleasePOST_RUN</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_ReleasePOST_RUN</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Releases a POST RUN request previously done with a call to EcuM_RequestPOST_RUN. The service is intended for implementing AUTOSAR ports.</L-2>
+							</DESC>
+							<SERVICE-ID>11</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>user</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ID of the entity releasing the POST RUN state.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_UserType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_ReleaseRUN</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_ReleaseRUN</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Releases a RUN request previously done with a call to EcuM_RequestRUN. The service is intended for implementing AUTOSAR ports.</L-2>
+							</DESC>
+							<SERVICE-ID>4</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>user</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ID of the entity releasing the RUN state.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_UserType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_RequestPOST_RUN</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_RequestPOST_RUN</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Places a request for the POST RUN state. Requests can be placed by every user made known to the state manager at configuration time. Requests for RUN and POST RUN must be tracked independently (in other words: two independent variables). The service is intended for implementing AUTOSAR ports.</L-2>
+							</DESC>
+							<SERVICE-ID>10</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>user</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ID of the entity requesting the POST RUN state.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_UserType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_RequestRUN</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_RequestRUN</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Places a request for the RUN state. Requests can be placed by every user made known to the state manager at configuration time.</L-2>
+							</DESC>
+							<SERVICE-ID>3</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>user</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ID of the entity requesting the RUN state.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_UserType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_SelectBootTarget</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_SelectBootTarget</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">EcuM_SelectBootTarget selects a boot target. EcuM_SelectBootTarget is part of the ECU Manager Module port interface.</L-2>
+							</DESC>
+							<SERVICE-ID>18</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>target</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The selected boot target.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_BootTargetType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_SelectShutdownTarget</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_SelectShutdownTarget</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">EcuM_SelectShutdownTarget selects the shutdown target. EcuM_SelectShutdownTarget is part of the ECU Manager Module port interface.</L-2>
+							</DESC>
+							<SERVICE-ID>6</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+								
+							<RETURN-TYPE>
+								<SHORT-NAME>Std_ReturnType</SHORT-NAME>
+								<CATEGORY>TYPE_REFERENCE</CATEGORY>
+								<DIRECTION>OUT</DIRECTION>
+								<SW-DATA-DEF-PROPS>
+									<SW-DATA-DEF-PROPS-VARIANTS>
+										<SW-DATA-DEF-PROPS-CONDITIONAL>
+											<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Std/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+										</SW-DATA-DEF-PROPS-CONDITIONAL>
+									</SW-DATA-DEF-PROPS-VARIANTS>
+								</SW-DATA-DEF-PROPS>
+							</RETURN-TYPE>
+						   
+							<ARGUMENTS>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>target</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The selected shutdown target.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+				
+								<SW-SERVICE-ARG UUID="">
+									<SHORT-NAME>mode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The identfier of a sleep mode (if target is ECUM_STATE_SLEEP) or a reset mechanism (if target is ECUM_STATE_RESET) as defined by configuration.</L-2>
+									</DESC>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<DIRECTION>IN</DIRECTION>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</SW-SERVICE-ARG>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_Shutdown</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_Shutdown</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">Typically called from the shutdown hook, this function takes over execution control and will carry out GO OFF II activities.</L-2>
+							</DESC>
+							<SERVICE-ID>2</SERVICE-ID>
+							<IS-REENTRANT>true</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+					
+						<BSW-MODULE-ENTRY>
+							<SHORT-NAME>EcuM_StartupTwo</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">EcuM_StartupTwo</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">This function implements the STARTUP II state.</L-2>
+							</DESC>
+							<SERVICE-ID>26</SERVICE-ID>
+							<IS-REENTRANT>false</IS-REENTRANT>
+							<IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+							<CALL-TYPE>REGULAR</CALL-TYPE>
+						   
+							<ARGUMENTS>
+						   
+							</ARGUMENTS>			
+						</BSW-MODULE-ENTRY>
+
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE UUID="">
+					<SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+					<ELEMENTS>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_WakeupSourceType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_WakeupReactionType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_WakeupStatusType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_BootTargetType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+										<COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR_EcuM/CompuMethods/EcuM_BootTargetType</COMPU-METHOD-REF>
+										<DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_EcuM/DataConstrs/DC_EcuM_BootTargetType</DATA-CONSTR-REF>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_SleepModeType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_StateType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+										<COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR_EcuM/CompuMethods/EcuM_StateType</COMPU-METHOD-REF>
+										<DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_EcuM/DataConstrs/DC_EcuM_StateType</DATA-CONSTR-REF>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_UserType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_AppModeType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+	
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_TimeoutType</SHORT-NAME>
+							<CATEGORY>TYPE_REFERENCE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+			
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_SleepModeConfig</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>WakeupSourceMask</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>McuMode</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>McuSuspended</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_CommonWakeupSourceConfig</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>ConfigType</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>Index</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_WakeupSourceConfig</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>CheckWakeupTimeout</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>ValidationTimeout</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>RequiresPolling</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>ComMChannel</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NumConfigs</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>Configs</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_InitListEntryType</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>InitFuncVoid</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_GenDef/ImplementationDataTypes/ConstVoidPtr</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>InitFuncParam</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_GenDef/ImplementationDataTypes/ConstVoidPtr</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>InitParam</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_GenDef/ImplementationDataTypes/ConstVoidPtr</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>ParamType</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_InitListType</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>Entries</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_GenDef/ImplementationDataTypes/ConstVoidPtr</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NumEntries</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_ComMType</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>CommunicationAllowedEntries</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_GenDef/ImplementationDataTypes/ConstVoidPtr</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NumEntries</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+							<TYPE-EMITTER>EcuM</TYPE-EMITTER>
+						</IMPLEMENTATION-DATA-TYPE>
+						<IMPLEMENTATION-DATA-TYPE UUID="">
+							<SHORT-NAME>EcuM_ConfigType</SHORT-NAME>
+							<CATEGORY>STRUCTURE</CATEGORY>
+							<SW-DATA-DEF-PROPS>
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<SW-DATA-DEF-PROPS-CONDITIONAL />
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+							<SUB-ELEMENTS>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DriverInitListOne</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DriverInitListTwo</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DriverInitListThree</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>RestartList</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DefaultAppMode</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>RunMinimumDuration</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>ComMData</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>SleepModes</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>WakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>GptWakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>IcuWakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>CanWakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>FrWakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DefaultSleepMode</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NumSleepModes</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NumWakeupSources</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NormalMcuMode</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NvM_ReadAllTimeout</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>NvM_WriteAllTimeout</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>TTII_WakeupSourceMask</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DefaultShutdownTarget</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>DefaultResetMode</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+	
+								<IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="">
+									<SHORT-NAME>TTII_Enabled</SHORT-NAME>
+									<CATEGORY>TYPE_REFERENCE</CATEGORY>
+									<SW-DATA-DEF-PROPS>
+										<SW-DATA-DEF-PROPS-VARIANTS>
+											<SW-DATA-DEF-PROPS-CONDITIONAL>
+												<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+											</SW-DATA-DEF-PROPS-CONDITIONAL>
+										</SW-DATA-DEF-PROPS-VARIANTS>
+									</SW-DATA-DEF-PROPS>
+								</IMPLEMENTATION-DATA-TYPE-ELEMENT>
+
+							</SUB-ELEMENTS>
+						</IMPLEMENTATION-DATA-TYPE>
+
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>SwcBswMappings</SHORT-NAME>
+					<ELEMENTS>
+						<SWC-BSW-MAPPING>
+							<SHORT-NAME>SBM_EcuM</SHORT-NAME>
+							<BSW-BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM</BSW-BEHAVIOR-REF>
+							<RUNNABLE-MAPPINGS>
+								<SWC-BSW-RUNNABLE-MAPPING>
+									<BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/AUTOSAR_EcuM/BswModuleDescriptions/EcuM/IB_EcuM/EcuM_MainFunction</BSW-ENTITY-REF>
+									<SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR_EcuM/SwComponentTypes/EcuM/IB_EcuM/EcuM_MainFunction</SWC-RUNNABLE-REF>
+								</SWC-BSW-RUNNABLE-MAPPING>
+							</RUNNABLE-MAPPINGS>
+							<SWC-BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR_EcuM/SwComponentTypes/EcuM/IB_EcuM</SWC-BEHAVIOR-REF>
+						</SWC-BSW-MAPPING>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>SwcImplementations</SHORT-NAME>
+					<ELEMENTS>
+						<SWC-IMPLEMENTATION>
+							<SHORT-NAME>Impl_EcuM</SHORT-NAME>
+							<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+							<SWC-BSW-MAPPING-REF DEST="SWC-BSW-MAPPING">/AUTOSAR_EcuM/SwcBswMappings/SBM_EcuM</SWC-BSW-MAPPING-REF>
+							<BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR_EcuM/SwComponentTypes/EcuM/IB_EcuM</BEHAVIOR-REF>
+						</SWC-IMPLEMENTATION>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>SwComponentTypes</SHORT-NAME>
+					<ELEMENTS>
+						<SERVICE-SW-COMPONENT-TYPE>
+							<SHORT-NAME>EcuM</SHORT-NAME>
+							<PORTS>
+							</PORTS>
+							<INTERNAL-BEHAVIORS>
+								<SWC-INTERNAL-BEHAVIOR>
+									<SHORT-NAME>IB_EcuM</SHORT-NAME>
+									<DATA-TYPE-MAPPING-REFS>
+										<DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/AUTOSAR_EcuM/DataTypeMappingSets/EcuM_DataTypeMappingSet</DATA-TYPE-MAPPING-REF>
+									</DATA-TYPE-MAPPING-REFS>
+									<EVENTS>
+									</EVENTS>
+									<HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+									<INCLUDED-DATA-TYPE-SETS>
+										<INCLUDED-DATA-TYPE-SET>
+											<DATA-TYPE-REFS>
+												<DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</DATA-TYPE-REF>
+												<DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_UserType</DATA-TYPE-REF>
+												<DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_BootTargetType</DATA-TYPE-REF>
+												<DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_AppModeType</DATA-TYPE-REF>
+											</DATA-TYPE-REFS>
+										</INCLUDED-DATA-TYPE-SET>
+									</INCLUDED-DATA-TYPE-SETS>
+									<PORT-API-OPTIONS>
+									</PORT-API-OPTIONS>
+									<RUNNABLES>
+										<RUNNABLE-ENTITY>
+											<SHORT-NAME>EcuM_MainFunction</SHORT-NAME>
+											<MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+											<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+											<SYMBOL>EcuM_MainFunction</SYMBOL>
+										</RUNNABLE-ENTITY>
+									</RUNNABLES>
+									<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+								</SWC-INTERNAL-BEHAVIOR>
+							</INTERNAL-BEHAVIORS>
+						</SERVICE-SW-COMPONENT-TYPE>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>ClientServerInterfaces</SHORT-NAME>
+					<ELEMENTS>
+						<CLIENT-SERVER-INTERFACE>
+							<SHORT-NAME>EcuM_BootTarget</SHORT-NAME>
+							<IS-SERVICE>true</IS-SERVICE>
+							<SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+							<OPERATIONS>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>SelectBootTarget</SHORT-NAME>
+									<ARGUMENTS>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>target</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_BootTargetType</TYPE-TREF>
+											<DIRECTION>IN</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+									</ARGUMENTS>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_BootTarget/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_BootTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>GetBootTarget</SHORT-NAME>
+									<ARGUMENTS>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>target</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_BootTargetType</TYPE-TREF>
+											<DIRECTION>OUT</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+									</ARGUMENTS>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_BootTarget/E_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+							</OPERATIONS>
+							<POSSIBLE-ERRORS>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_OK</SHORT-NAME>
+									<ERROR-CODE>0</ERROR-CODE>
+								</APPLICATION-ERROR>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+									<ERROR-CODE>1</ERROR-CODE>
+								</APPLICATION-ERROR>
+							</POSSIBLE-ERRORS>
+						</CLIENT-SERVER-INTERFACE>
+						<CLIENT-SERVER-INTERFACE>
+							<SHORT-NAME>EcuM_ShutdownTarget</SHORT-NAME>
+							<IS-SERVICE>true</IS-SERVICE>
+							<SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+							<OPERATIONS>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>SelectShutdownTarget</SHORT-NAME>
+									<ARGUMENTS>
+										<ARGUMENT-DATA-PROTOTYPE>
+										<SHORT-NAME>target</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</TYPE-TREF>
+											<DIRECTION>IN</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>mode</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+											<DIRECTION>IN</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+									</ARGUMENTS>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_ShutdownTarget/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>GetShutdownTarget</SHORT-NAME>
+									<ARGUMENTS>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>target</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</TYPE-TREF>
+											<DIRECTION>OUT</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>mode</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+											<DIRECTION>OUT</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+									</ARGUMENTS>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_ShutdownTarget/E_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>GetLastShutdownTarget</SHORT-NAME>
+									<ARGUMENTS>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>target</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_EcuM/ImplementationDataTypes/EcuM_StateType</TYPE-TREF>
+											<DIRECTION>OUT</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+										<ARGUMENT-DATA-PROTOTYPE>
+											<SHORT-NAME>mode</SHORT-NAME>
+											<SW-DATA-DEF-PROPS>
+												<SW-DATA-DEF-PROPS-VARIANTS>
+													<SW-DATA-DEF-PROPS-CONDITIONAL>
+														<SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+													</SW-DATA-DEF-PROPS-CONDITIONAL>
+												</SW-DATA-DEF-PROPS-VARIANTS>
+											</SW-DATA-DEF-PROPS>
+											<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+											<DIRECTION>OUT</DIRECTION>
+										</ARGUMENT-DATA-PROTOTYPE>
+									</ARGUMENTS>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_ShutdownTarget/E_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+							</OPERATIONS>
+							<POSSIBLE-ERRORS>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_OK</SHORT-NAME>
+									<ERROR-CODE>0</ERROR-CODE>
+								</APPLICATION-ERROR>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+									<ERROR-CODE>1</ERROR-CODE>
+								</APPLICATION-ERROR>
+							</POSSIBLE-ERRORS>
+						</CLIENT-SERVER-INTERFACE>
+						<CLIENT-SERVER-INTERFACE>
+							<SHORT-NAME>EcuM_StateRequest</SHORT-NAME>
+							<IS-SERVICE>true</IS-SERVICE>
+							<SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+							<OPERATIONS>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>RequestRUN</SHORT-NAME>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>ReleaseRUN</SHORT-NAME>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>RequestPOSTRUN</SHORT-NAME>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+								<CLIENT-SERVER-OPERATION>
+									<SHORT-NAME>ReleasePOSTRUN</SHORT-NAME>
+									<POSSIBLE-ERROR-REFS>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_OK</POSSIBLE-ERROR-REF>
+										<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR_EcuM/ClientServerInterfaces/EcuM_StateRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+									</POSSIBLE-ERROR-REFS>
+								</CLIENT-SERVER-OPERATION>
+							</OPERATIONS>
+							<POSSIBLE-ERRORS>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_OK</SHORT-NAME>
+									<ERROR-CODE>0</ERROR-CODE>
+								</APPLICATION-ERROR>
+								<APPLICATION-ERROR>
+									<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+									<ERROR-CODE>1</ERROR-CODE>
+								</APPLICATION-ERROR>
+							</POSSIBLE-ERRORS>
+						</CLIENT-SERVER-INTERFACE>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>CompuMethods</SHORT-NAME>
+					<ELEMENTS>
+						<COMPU-METHOD>
+							<SHORT-NAME>EcuM_BootTargetType</SHORT-NAME>
+							<CATEGORY>TEXTTABLE</CATEGORY>
+							<COMPU-INTERNAL-TO-PHYS>
+								<COMPU-SCALES>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_BOOT_TARGET_APP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_BOOT_TARGET_OEM_BOOTLOADER</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_BOOT_TARGET_SYS_BOOTLOADER</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+								</COMPU-SCALES>
+							</COMPU-INTERNAL-TO-PHYS>
+						</COMPU-METHOD>
+						<COMPU-METHOD>
+							<SHORT-NAME>EcuM_StateType</SHORT-NAME>
+							<CATEGORY>TEXTTABLE</CATEGORY>
+							<COMPU-INTERNAL-TO-PHYS>
+								<COMPU-SCALES>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">15</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">15</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_SUBSTATE_MASK</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">16</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">16</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_STARTUP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">17</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">17</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_STARTUP_ONE</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">18</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">18</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_STARTUP_TWO</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">32</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">32</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">33</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">33</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_ONE</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">34</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">34</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_VALIDATION</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">35</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">35</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_REACTION</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">36</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">36</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_TWO</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">37</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">37</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_WAKESLEEP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">38</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">38</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_WAKEUP_TTII</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">48</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">48</UPPER-LIMIT>
+										<COMPU-CONST>
+										<VT>ECUM_STATE_RUN</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">50</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">50</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_APP_RUN</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">51</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">51</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_APP_POST_RUN</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">64</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">64</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_SHUTDOWN</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">68</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">68</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_PREP_SHUTDOWN</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">73</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">73</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_GO_SLEEP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">77</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">77</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_GO_OFF_ONE</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">78</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">78</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_GO_OFF_TWO</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">80</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">80</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_SLEEP</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">128</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">128</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_OFF</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">144</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">144</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>ECUM_STATE_RESET</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+								</COMPU-SCALES>
+							</COMPU-INTERNAL-TO-PHYS>
+						</COMPU-METHOD>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>DataConstrs</SHORT-NAME>
+					<ELEMENTS>
+						<DATA-CONSTR>
+							<SHORT-NAME>DC_EcuM_BootTargetType</SHORT-NAME>
+							<DATA-CONSTR-RULES>
+								<DATA-CONSTR-RULE>
+									<CONSTR-LEVEL>0</CONSTR-LEVEL>
+									<INTERNAL-CONSTRS>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+									</INTERNAL-CONSTRS>
+								</DATA-CONSTR-RULE>
+							</DATA-CONSTR-RULES>
+						</DATA-CONSTR>
+						<DATA-CONSTR>
+							<SHORT-NAME>DC_EcuM_StateType</SHORT-NAME>
+							<DATA-CONSTR-RULES>
+								<DATA-CONSTR-RULE>
+									<CONSTR-LEVEL>0</CONSTR-LEVEL>
+									<INTERNAL-CONSTRS>
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">15</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">144</UPPER-LIMIT>
+									</INTERNAL-CONSTRS>
+								</DATA-CONSTR-RULE>
+							</DATA-CONSTR-RULES>
+						</DATA-CONSTR>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+					<ELEMENTS>
+						<DATA-TYPE-MAPPING-SET>
+							<SHORT-NAME>EcuM_DataTypeMappingSet</SHORT-NAME>
+							<MODE-REQUEST-TYPE-MAPS>
+								<MODE-REQUEST-TYPE-MAP>
+									<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+									<MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/AUTOSAR_EcuM/ModeDeclarationGroups/EcuM_Mode</MODE-GROUP-REF>
+								</MODE-REQUEST-TYPE-MAP>
+							</MODE-REQUEST-TYPE-MAPS>
+						</DATA-TYPE-MAPPING-SET>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+					<ELEMENTS>
+						<MODE-DECLARATION-GROUP>
+							<SHORT-NAME>EcuM_Mode</SHORT-NAME>
+							<CATEGORY>ALPHABETIC_ORDER</CATEGORY>
+							<INITIAL-MODE-REF DEST="MODE-DECLARATION">/AUTOSAR_EcuM/ModeDeclarationGroups/EcuM_Mode/STARTUP</INITIAL-MODE-REF>
+							<MODE-DECLARATIONS>
+								<MODE-DECLARATION>
+									<SHORT-NAME>STARTUP</SHORT-NAME>
+								</MODE-DECLARATION>
+								<MODE-DECLARATION>
+									<SHORT-NAME>RUN</SHORT-NAME>
+								</MODE-DECLARATION>
+								<MODE-DECLARATION>
+									<SHORT-NAME>POST_RUN</SHORT-NAME>
+								</MODE-DECLARATION>
+								<MODE-DECLARATION>
+									<SHORT-NAME>SLEEP</SHORT-NAME>
+								</MODE-DECLARATION>
+								<MODE-DECLARATION>
+									<SHORT-NAME>WAKE_SLEEP</SHORT-NAME>
+								</MODE-DECLARATION>
+								<MODE-DECLARATION>
+									<SHORT-NAME>SHUTDOWN</SHORT-NAME>
+								</MODE-DECLARATION>
+							</MODE-DECLARATIONS>
+						</MODE-DECLARATION-GROUP>
+					</ELEMENTS>
+				</AR-PACKAGE>
+				<AR-PACKAGE>
+					<SHORT-NAME>ModeSwitchInterfaces</SHORT-NAME>
+					<ELEMENTS>
+						<MODE-SWITCH-INTERFACE>
+							<SHORT-NAME>EcuM_CurrentMode</SHORT-NAME>
+							<IS-SERVICE>true</IS-SERVICE>
+							<SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+							<MODE-GROUP>
+								<SHORT-NAME>currentMode</SHORT-NAME>
+								<TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AUTOSAR_EcuM/ModeDeclarationGroups/EcuM_Mode</TYPE-TREF>
+							</MODE-GROUP>
+						</MODE-SWITCH-INTERFACE>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BuildInfo xmlns:bldInfo="urn:dSPACE:BuildInfo"
+  bldInfo:version="1">
+  <!--The last modification of the following simulation system: EcuInstance.-->
+  <bldInfo:ModificationDate>2025-06-11T08:52:53.0564246Z</bldInfo:ModificationDate>
+</BuildInfo>

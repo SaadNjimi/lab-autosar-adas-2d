@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageDescription xmlns="http://www.dspace.com/xml/PackageDescription/V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dspace.com/xml/PackageDescription/V1 PackageDescription_1-0-0.xsd">
+  <QualifiedName>EcuInstance.TargetSpeedControl</QualifiedName>
+  <Category>ModelPackage</Category>
+  <SoftwareArchitecture>AutosarClassicPlatform</SoftwareArchitecture>
+  <Creator>SystemDesk</Creator>
+  <CreatorVersion>5.6</CreatorVersion>
+</PackageDescription>

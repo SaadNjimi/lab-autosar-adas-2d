@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "adjustspeed": "c",
+        "rte_sensorswc.h": "c",
+        "rte_actuatorswc.h": "c",
+        "rte_cruisecontrol.h": "c",
+        "sab.h": "c"
+    }
+}

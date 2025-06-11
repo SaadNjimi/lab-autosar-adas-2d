@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PlatformDescription xmlns="http://www.dspace.com/xml/PlatformDescription/V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dspace.com/xml/PlatformDescription/V1 PlatformDescription_1-1-0.xsd">
+  <ShortName>GENERIC</ShortName>
+  <Description>Generic code without any platform dependencies.</Description>
+</PlatformDescription>

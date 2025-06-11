@@ -1,0 +1,7 @@
+Working directory: C:\Users\Ase-Lab\Desktop\ASE_Lab_Unit_4_Template\ASE_Lab_Unit_4_Template\VEcuImplementations\EcuInstance\Build\EcuInstance
+Command: C:\PROGRA~1\COMMON~1\dSPACE\GCC\5.2\bin\gcc.exe  -x c @.\BinaryArtifacts\EcuInstance\HostPC64_GCC\cCompOpt.dcd -o .\\BinaryArtifacts\\EcuInstance\\HostPC64_GCC\\WriteToSim.o .\ExtractedData\EcuInstance.ActuatorSWC\WriteToSim.c 
+ExitCode: 0, ExitTime: 10:52:49 AM
+.\ExtractedData\EcuInstance.ActuatorSWC\WriteToSim.c: In function 'ActuatorSWC_WriteToSim':
+.\ExtractedData\EcuInstance.ActuatorSWC\WriteToSim.c:81:7: warning: unused variable 'sent' [-Wunused-variable]
+   int sent = write(tx, txBuf, MSG_LEN);  
+       ^

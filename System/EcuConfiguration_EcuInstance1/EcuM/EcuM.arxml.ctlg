@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!-- Description: Catalog file for 'EcuM' BSW module (AUTOSAR 4.3.0). -->
+<!-- Created with SystemDesk 5.6.0.13023 -->
+<!-- Copyright 2018 by dSPACE GmbH. All rights reserved. -->
+<CATALOG xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CREATOR="SystemDesk" CREATOR-VERSION="5.6.0.13023" F-CM-TOOL-ID="Catalog_V3_0_0.sl.ComplexTypes.xsd 1.1" F-DTD-BUILD="14" F-DTD-VERSION="3.0.0" F-PUBID="-//ASAM//DTD CONTAINER CATALOG:V3.0.0:LAI:IAI:ML:CC.DTD//EN">
+    <SHORT-NAME>EcuM.arxml.ctlg</SHORT-NAME>
+    <ABLOCKS>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>EcuM.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Callout.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Callout.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_PBcfg.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>EcuM_PBcfg.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_States.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>EcuM_States.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Callout.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Callout.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Cbk.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Cbk.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Cfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Cfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Types.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Types.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_Internal.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>EcuM_Internal.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>EcuM_PlatformDescription.xml</SHORT-NAME>
+            <CATEGORY>OTHER</CATEGORY>
+            <FILES>
+                <FILE>EcuM_PlatformDescription.xml</FILE>
+            </FILES>
+        </ABLOCK>
+    </ABLOCKS>
+</CATALOG>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- Description: Catalog file for 'Os' BSW module (AUTOSAR 4.3.0). -->
+<!-- Created with SystemDesk 5.6.0.13023 -->
+<!-- Copyright 2017 by dSPACE GmbH. All rights reserved. -->
+<CATALOG xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CREATOR="SystemDesk" CREATOR-VERSION="5.6.0.13023" F-CM-TOOL-ID="Catalog_V3_0_0.sl.ComplexTypes.xsd 1.1" F-DTD-BUILD="14" F-DTD-VERSION="3.0.0" F-PUBID="-//ASAM//DTD CONTAINER CATALOG:V3.0.0:LAI:IAI:ML:CC.DTD//EN">
+    <SHORT-NAME>Os.arxml.ctlg</SHORT-NAME>
+    <ABLOCKS>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>Ioc.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Ioc.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>Os_Cfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Os_Cfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>Os.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Os.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK F-ID-CLASS="ABLOCK">
+            <SHORT-NAME>Os_Types.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Os_Types.h</FILE>
+            </FILES>
+        </ABLOCK>
+    </ABLOCKS>
+</CATALOG>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PlatformDescription xmlns="http://www.dspace.com/xml/PlatformDescription/V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dspace.com/xml/PlatformDescription/V1 PlatformDescription_1-0-0.xsd">
+  <ShortName>Unknown_Unknown</ShortName>
+  <Description>Platform: Unknown, Compiler: Unknown</Description>
+  <AbstractDataTypes>
+    <AbstractDataType>
+      <NativeType>signed char</NativeType>
+      <Description>signed 8 bit integer</Description>
+      <Category>SignedInteger</Category>
+      <NumberOfBits>8</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>unsigned char</NativeType>
+      <Description>unsigned 8 bit integer</Description>
+      <Category>UnsignedInteger</Category>
+      <NumberOfBits>8</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>signed short int</NativeType>
+      <Description>signed 16 bit integer</Description>
+      <Category>SignedInteger</Category>
+      <NumberOfBits>16</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>unsigned short int</NativeType>
+      <Description>unsigned 16 bit integer</Description>
+      <Category>UnsignedInteger</Category>
+      <NumberOfBits>16</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>signed int</NativeType>
+      <Description>signed 32 bit integer</Description>
+      <Category>SignedInteger</Category>
+      <NumberOfBits>32</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>unsigned int</NativeType>
+      <Description>unsigned 32 bit integer</Description>
+      <Category>UnsignedInteger</Category>
+      <NumberOfBits>32</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>signed long long int</NativeType>
+      <Description>signed 64 bit integer</Description>
+      <Category>SignedInteger</Category>
+      <NumberOfBits>64</NumberOfBits>
+      <AtomicAccess>false</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>unsigned long long int</NativeType>
+      <Description>unsigned 64 bit integer</Description>
+      <Category>UnsignedInteger</Category>
+      <NumberOfBits>64</NumberOfBits>
+      <AtomicAccess>false</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>float</NativeType>
+      <Description>32 bit floating-point</Description>
+      <Category>FloatingPoint</Category>
+      <NumberOfBits>32</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>double</NativeType>
+      <Description>64 bit floating-point</Description>
+      <Category>FloatingPoint</Category>
+      <NumberOfBits>64</NumberOfBits>
+      <AtomicAccess>false</AtomicAccess>
+    </AbstractDataType>
+    <AbstractDataType>
+      <NativeType>unsigned char</NativeType>
+      <Description>boolean variable</Description>
+      <Category>Boolean</Category>
+      <NumberOfBits>8</NumberOfBits>
+      <AtomicAccess>true</AtomicAccess>
+    </AbstractDataType>
+  </AbstractDataTypes>
+</PlatformDescription>

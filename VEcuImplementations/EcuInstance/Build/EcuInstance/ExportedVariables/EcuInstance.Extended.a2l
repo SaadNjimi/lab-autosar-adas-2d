@@ -1,0 +1,1732 @@
+ASAP2_VERSION 1 60
+
+/begin  PROJECT Unit4 "" 
+
+    /begin  MODULE EcuInstance ""
+    /* ---------------------------------------------------------------------- */
+    /* Begin of sections added by VEOS.                                       */
+    /* ---------------------------------------------------------------------- */
+
+    /begin A2ML
+      /**************************************************/
+      /* ASAP2 meta language for XCP protocol layer 1.0 */
+      /**************************************************/
+
+      struct Protocol_Layer {
+        uint; /* XCP_PROTOCOL_LAYER_VERSION */
+
+        uint; /* T1 [ms] */
+        uint; /* T2 [ms] */
+        uint; /* T3 [ms] */
+        uint; /* T4 [ms] */
+        uint; /* T5 [ms] */
+        uint; /* T6 [ms] */
+        uint; /* T7 [ms] */
+
+        uchar; /* MAX_CTO */
+        uint; /* MAX_DTO */
+
+        enum {
+          "BYTE_ORDER_MSB_LAST"  = 0,
+          "BYTE_ORDER_MSB_FIRST" = 1
+        };
+
+        enum {
+          "ADDRESS_GRANULARITY_BYTE"  = 1,
+          "ADDRESS_GRANULARITY_WORD"  = 2,
+          "ADDRESS_GRANULARITY_DWORD" = 4
+        };
+
+        taggedstruct {
+          ("OPTIONAL_CMD" enum {
+            "GET_COMM_MODE_INFO"      = 0xFB,
+            "GET_ID"                  = 0xFA,
+            "SET_REQUEST"             = 0xF9,
+            "GET_SEED"                = 0xF8,
+            "UNLOCK"                  = 0xF7,
+            "SET_MTA"                 = 0xF6,
+            "UPLOAD"                  = 0xF5,
+            "SHORT_UPLOAD"            = 0xF4,
+            "BUILD_CHECKSUM"          = 0xF3,
+            "TRANSPORT_LAYER_CMD"     = 0xF2,
+            "USER_CMD"                = 0xF1,
+            "DOWNLOAD"                = 0xF0,
+            "DOWNLOAD_NEXT"           = 0xEF,
+            "DOWNLOAD_MAX"            = 0xEE,
+            "SHORT_DOWNLOAD"          = 0xED,
+            "MODIFY_BITS"             = 0xEC,
+            "SET_CAL_PAGE"            = 0xEB,
+            "GET_CAL_PAGE"            = 0xEA,
+            "GET_PAG_PROCESSOR_INFO"  = 0xE9,
+            "GET_SEGMENT_INFO"        = 0xE8,
+            "GET_PAGE_INFO"           = 0xE7,
+            "SET_SEGMENT_MODE"        = 0xE6,
+            "GET_SEGMENT_MODE"        = 0xE5,
+            "COPY_CAL_PAGE"           = 0xE4,
+            "CLEAR_DAQ_LIST"          = 0xE3,
+            "SET_DAQ_PTR"             = 0xE2,
+            "WRITE_DAQ"               = 0xE1,
+            "SET_DAQ_LIST_MODE"       = 0xE0,
+            "GET_DAQ_LIST_MODE"       = 0xDF,
+            "START_STOP_DAQ_LIST"     = 0xDE,
+            "START_STOP_SYNCH"        = 0xDD,
+            "GET_DAQ_CLOCK"           = 0xDC,
+            "READ_DAQ"                = 0xDB,
+            "GET_DAQ_PROCESSOR_INFO"  = 0xDA,
+            "GET_DAQ_RESOLUTION_INFO" = 0xD9,
+            "GET_DAQ_LIST_INFO"       = 0xD8,
+            "GET_DAQ_EVENT_INFO"      = 0xD7,
+            "FREE_DAQ"                = 0xD6,
+            "ALLOC_DAQ"               = 0xD5,
+            "ALLOC_ODT"               = 0xD4,
+            "ALLOC_ODT_ENTRY"         = 0xD3,
+            "PROGRAM_START"           = 0xD2,
+            "PROGRAM_CLEAR"           = 0xD1,
+            "PROGRAM"                 = 0xD0,
+            "PROGRAM_RESET"           = 0xCF,
+            "GET_PGM_PROCESSOR_INFO"  = 0xCE,
+            "GET_SECTOR_INFO"         = 0xCD,
+            "PROGRAM_PREPARE"         = 0xCC,
+            "PROGRAM_FORMAT"          = 0xCB,
+            "PROGRAM_NEXT"            = 0xCA,
+            "PROGRAM_MAX"             = 0xC9,
+            "PROGRAM_VERIFY"          = 0xC8
+          })*;
+
+          "COMMUNICATION_MODE_SUPPORTED" taggedunion {
+            "BLOCK" taggedstruct {
+              "SLAVE";
+              "MASTER" struct {
+                uchar; /* MAX_BS */
+                uchar; /* MIN_ST */
+              };
+            };
+
+            "INTERLEAVED" uchar;
+          };
+
+          "SEED_AND_KEY_EXTERNAL_FUNCTION" char[256];
+        };
+      };
+
+      struct Daq {
+        enum {
+          "STATIC"  = 0,
+          "DYNAMIC" = 1
+        };
+
+        uint; /* MAX_DAQ */
+        uint; /* MAX_EVENT_CHANNEL */
+        uchar; /* MIN_DAQ */
+
+        enum {
+          "OPTIMISATION_TYPE_DEFAULT"            = 0,
+          "OPTIMISATION_TYPE_ODT_TYPE_16"        = 1,
+          "OPTIMISATION_TYPE_ODT_TYPE_32"        = 2,
+          "OPTIMISATION_TYPE_ODT_TYPE_64"        = 3,
+          "OPTIMISATION_TYPE_ODT_TYPE_ALIGNMENT" = 4,
+          "OPTIMISATION_TYPE_MAX_ENTRY_SIZE"     = 5
+        };
+
+        enum {
+          "ADDRESS_EXTENSION_FREE" = 0,
+          "ADDRESS_EXTENSION_ODT"  = 1,
+          "ADDRESS_EXTENSION_DAQ"  = 3
+        };
+
+        enum {
+          "IDENTIFICATION_FIELD_TYPE_ABSOLUTE"              = 0,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_BYTE"         = 1,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_WORD"         = 2,
+          "IDENTIFICATION_FIELD_TYPE_RELATIVE_WORD_ALIGNED" = 3
+        };
+
+        enum {
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_BYTE"  = 1,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_WORD"  = 2,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_DWORD" = 4,
+          "GRANULARITY_ODT_ENTRY_SIZE_DAQ_DLONG" = 8
+        };
+
+        uchar; /* MAX_ODT_ENTRY_SIZE_DAQ */
+
+        enum {
+          "NO_OVERLOAD_INDICATION"    = 0,
+          "OVERLOAD_INDICATION_PID"   = 1,
+          "OVERLOAD_INDICATION_EVENT" = 2
+        };
+
+        taggedstruct {
+          "PRESCALER_SUPPORTED";
+          "RESUME_SUPPORTED";
+
+          block "STIM" struct {
+            enum {
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_BYTE"  = 1,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_WORD"  = 2,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_DWORD" = 4,
+              "GRANULARITY_ODT_ENTRY_SIZE_STIM_DLONG" = 8
+            };
+
+            uchar; /* MAX_ODT_ENTRY_SIZE_STIM */
+
+            taggedstruct {
+              "BIT_STIM_SUPPORTED";
+            };
+          };
+
+          block "TIMESTAMP_SUPPORTED" struct {
+            uint; /* TIMESTAMP_TICKS */
+
+            enum {
+              "NO_TIME_STAMP" = 0,
+              "SIZE_BYTE"     = 1,
+              "SIZE_WORD"     = 2,
+              "SIZE_DWORD"    = 4
+            };
+
+            enum {
+              "UNIT_1NS"   = 0,
+              "UNIT_10NS"  = 1,
+              "UNIT_100NS" = 2,
+              "UNIT_1US"   = 3,
+              "UNIT_10US"  = 4,
+              "UNIT_100US" = 5,
+              "UNIT_1MS"   = 6,
+              "UNIT_10MS"  = 7,
+              "UNIT_100MS" = 8,
+              "UNIT_1S"    = 9
+            };
+
+            taggedstruct {
+              "TIMESTAMP_FIXED";
+            };
+          };
+
+          "PID_OFF_SUPPORTED";
+
+          (block "DAQ_LIST" struct {
+            uint; /* DAQ_LIST_NUMBER */
+
+            taggedstruct {
+              "DAQ_LIST_TYPE" enum {
+                "DAQ"      = 1,
+                "STIM"     = 2,
+                "DAQ_STIM" = 3
+              };
+
+              "MAX_ODT" uchar;
+              "MAX_ODT_ENTRIES" uchar;
+              "FIRST_PID" uchar;
+              "EVENT_FIXED" uint;
+
+              block "PREDEFINED" taggedstruct {
+                (block "ODT" struct {
+                  uchar; /* ODT_NUMBER */
+
+                  taggedstruct {
+                    ("ODT_ENTRY" struct {
+                      uchar; /* ODT_ENTRY_NUMBER */
+                      ulong; /* ELEMENT_ADDRESS */
+                      uchar; /* ELEMENT_ADDRESS_EXTENSION */
+                      uchar; /* ELEMENT_SIZE */
+                      uchar; /* BIT_OFFSET */
+                    })*;
+                  };
+                })*;
+              };
+            };
+          })*;
+
+          (block "EVENT" struct {
+            char[101]; /* EVENT_CHANNEL_NAME */
+            char[9]; /* EVENT_CHANNEL_SHORT_NAME */
+            uint; /* EVENT_CHANNEL_NUMBER */
+
+            enum {
+              "DAQ"      = 1,
+              "STIM"     = 2,
+              "DAQ_STIM" = 3
+            };
+
+            uchar; /* MAX_DAQ_LIST */
+            uchar; /* EVENT_CHANNEL_TIME_CYCLE */
+            uchar; /* EVENT_CHANNEL_TIME_UNIT */
+            uchar; /* EVENT_CHANNEL_PRIORITY */
+          })*;
+        };
+      };
+
+      taggedunion Daq_Event {
+        "FIXED_EVENT_LIST" taggedstruct {
+          ("EVENT" uint)*;
+        };
+
+        "VARIABLE" taggedstruct {
+          block "AVAILABLE_EVENT_LIST" taggedstruct {
+            ("EVENT" uint)*;
+          };
+
+          block "DEFAULT_EVENT_LIST" taggedstruct {
+            ("EVENT" uint)*;
+          };
+        };
+      };
+
+      struct Pag {
+        uchar; /* MAX_SEGMENTS */
+
+        taggedstruct {
+          "FREEZE_SUPPORTED";
+        };
+      };
+
+      struct Pgm {
+        enum {
+          "PGM_MODE_ABSOLUTE"                = 1,
+          "PGM_MODE_FUNCTIONAL"              = 2,
+          "PGM_MODE_ABSOLUTE_AND_FUNCTIONAL" = 3
+        };
+
+        uchar; /* MAX_SECTORS */
+        uchar; /* MAX_CTO_PGM */
+
+        taggedstruct {
+          (block "SECTOR" struct {
+            char[101]; /* SECTOR_NAME */
+            uchar; /* SECTOR_NUMBER */
+            ulong; /* ADDRESS */
+            ulong; /* LENGTH */
+            uchar; /* CLEAR_SEQUENCE_NUMBER */
+            uchar; /* PROGRAM_SEQUENCE_NUMBER */
+            uchar; /* PROGRAM_METHOD */
+          })*;
+
+          "COMMUNICATION_MODE_SUPPORTED" taggedunion {
+            "BLOCK" taggedstruct {
+              "SLAVE";
+              "MASTER" struct {
+                uchar; /* MAX_BS_PGM */
+                uchar; /* MIN_ST_PGM */
+              };
+            };
+
+            "INTERLEAVED" uchar;
+          };
+        };
+      };
+
+      struct Segment {
+        uchar; /* SEGMENT_NUMBER */
+        uchar; /* NUMBER_OF_PAGES */
+        uchar; /* ADDRESS_EXTENSION */
+        uchar; /* COMPRESSION_METHOD */
+        uchar; /* ENCRYPTION_METHOD */
+
+        taggedstruct {
+          block "CHECKSUM" struct {
+            enum {
+              "XCP_ADD_11"       =   1,
+              "XCP_ADD_12"       =   2,
+              "XCP_ADD_14"       =   3,
+              "XCP_ADD_22"       =   4,
+              "XCP_ADD_24"       =   5,
+              "XCP_ADD_44"       =   6,
+              "XCP_CRC_16"       =   7,
+              "XCP_CRC_16_CITT"  =   8,
+              "XCP_CRC_32"       =   9,
+              "XCP_USER_DEFINED" = 255
+            };
+
+            taggedstruct {
+              "MAX_BLOCK_SIZE" ulong;
+              "EXTERNAL_FUNCTION" char[256];
+            };
+          };
+
+          (block "PAGE" struct {
+            uchar; /* PAGE_NUMBER */
+            enum {
+              "ECU_ACCESS_NOT_ALLOWED"      = 0,
+              "ECU_ACCESS_WITHOUT_XCP_ONLY" = 1,
+              "ECU_ACCESS_WITH_XCP_ONLY"    = 2,
+              "ECU_ACCESS_DONT_CARE"        = 3
+            };
+
+            enum {
+              "XCP_READ_ACCESS_NOT_ALLOWED"      = 0,
+              "XCP_READ_ACCESS_WITHOUT_ECU_ONLY" = 1,
+              "XCP_READ_ACCESS_WITH_ECU_ONLY"    = 2,
+              "XCP_READ_ACCESS_DONT_CARE"        = 3
+            };
+
+            enum {
+              "XCP_WRITE_ACCESS_NOT_ALLOWED"      = 0,
+              "XCP_WRITE_ACCESS_WITHOUT_ECU_ONLY" = 1,
+              "XCP_WRITE_ACCESS_WITH_ECU_ONLY"    = 2,
+              "XCP_WRITE_ACCESS_DONT_CARE"        = 3
+            };
+
+            taggedstruct {
+              "INIT_SEGMENT" uchar;
+            };
+          })*;
+
+          (block "ADDRESS_MAPPING" struct {
+            ulong; /* SOURCE_ADDRESS */
+            ulong; /* DESTINATION_ADDRESS */
+            ulong; /* LENGTH */
+          })*;
+
+          "PGM_VERIFY" ulong;
+        };
+      };
+
+      taggedstruct Common_Parameters {
+        block "PROTOCOL_LAYER" struct Protocol_Layer;
+        block "SEGMENT" struct Segment;
+        block "DAQ" struct Daq;
+        block "PAG" struct Pag;
+        block "PGM" struct Pgm;
+        block "DAQ_EVENT" taggedunion Daq_Event;
+      };
+
+      struct TCP_IP_Parameters {
+        uint; /* XCP_ON_TCP_IP_VERSION */
+        uint; /* PORT */
+        taggedunion {
+          "HOST_NAME" char[256];
+          "ADDRESS" char[15];
+        };
+      };
+
+      struct Xcp {
+        taggedstruct Common_Parameters;
+        taggedstruct {
+          block "XCP_ON_TCP_IP" struct {
+            struct TCP_IP_Parameters;
+            taggedstruct Common_Parameters;
+          };
+        };
+      };
+
+      block "IF_DATA" taggedunion if_data {
+        block "XCP" struct Xcp;
+      };
+    /end A2ML
+
+    /begin IF_DATA XCP
+      /begin PROTOCOL_LAYER
+        0x0100 /* XCP_PROTOCOL_LAYER_VERSION */
+
+        500 /* T1 [ms] */
+        2500 /* T2 [ms] */
+        100 /* T3 [ms] */
+        100 /* T4 [ms] */
+        100 /* T5 [ms] */
+        100 /* T6 [ms] */
+        500 /* T7 [ms] */
+
+        255 /* MAX_CTO */
+        1408 /* MAX_DTO */
+
+        BYTE_ORDER_MSB_LAST
+
+        ADDRESS_GRANULARITY_BYTE
+
+        OPTIONAL_CMD SET_MTA
+        OPTIONAL_CMD UPLOAD
+        OPTIONAL_CMD SHORT_UPLOAD
+        OPTIONAL_CMD BUILD_CHECKSUM
+        OPTIONAL_CMD DOWNLOAD
+        OPTIONAL_CMD DOWNLOAD_MAX
+        OPTIONAL_CMD SHORT_DOWNLOAD
+        OPTIONAL_CMD MODIFY_BITS
+        OPTIONAL_CMD SET_CAL_PAGE
+        OPTIONAL_CMD GET_CAL_PAGE
+        OPTIONAL_CMD CLEAR_DAQ_LIST
+        OPTIONAL_CMD SET_DAQ_PTR
+        OPTIONAL_CMD WRITE_DAQ
+        OPTIONAL_CMD SET_DAQ_LIST_MODE
+        OPTIONAL_CMD GET_DAQ_LIST_MODE
+        OPTIONAL_CMD START_STOP_DAQ_LIST
+        OPTIONAL_CMD START_STOP_SYNCH
+        OPTIONAL_CMD GET_DAQ_CLOCK
+        OPTIONAL_CMD FREE_DAQ
+        OPTIONAL_CMD ALLOC_DAQ
+        OPTIONAL_CMD ALLOC_ODT
+        OPTIONAL_CMD ALLOC_ODT_ENTRY
+      /end PROTOCOL_LAYER
+
+      /begin DAQ
+        DYNAMIC
+        65535 /* MAX_DAQ */
+        4 /* MAX_EVENT_CHANNEL */
+        0 /* MIN_DAQ */
+        OPTIMISATION_TYPE_DEFAULT
+        ADDRESS_EXTENSION_FREE
+        IDENTIFICATION_FIELD_TYPE_ABSOLUTE
+        GRANULARITY_ODT_ENTRY_SIZE_DAQ_BYTE
+        255 /* MAX_ODT_ENTRY_SIZE_DAQ */
+        NO_OVERLOAD_INDICATION
+        PRESCALER_SUPPORTED
+
+        /begin TIMESTAMP_SUPPORTED
+          1 /* TIMESTAMP_TICKS */
+          SIZE_DWORD
+          UNIT_1MS
+        /end TIMESTAMP_SUPPORTED
+
+        /begin EVENT
+          "MainFunctionTask3_1ms" /* EVENT_CHANNEL_NAME */
+          "t1" /* EVENT_CHANNEL_SHORT_NAME */
+          1 /* EVENT_CHANNEL_NUMBER */
+          DAQ
+          255 /* MAX_DAQ_LIST */
+          1 /* EVENT_CHANNEL_TIME_CYCLE */
+          6 /* EVENT_CHANNEL_TIME_UNIT */
+          0 /* EVENT_CHANNEL_PRIORITY */
+        /end EVENT
+
+        /begin EVENT
+          "Task0_10ms" /* EVENT_CHANNEL_NAME */
+          "t3" /* EVENT_CHANNEL_SHORT_NAME */
+          3 /* EVENT_CHANNEL_NUMBER */
+          DAQ
+          255 /* MAX_DAQ_LIST */
+          1 /* EVENT_CHANNEL_TIME_CYCLE */
+          7 /* EVENT_CHANNEL_TIME_UNIT */
+          0 /* EVENT_CHANNEL_PRIORITY */
+        /end EVENT
+      /end DAQ
+
+      /begin PAG
+        1 /* MAX_SEGMENTS */
+      /end PAG
+
+      /begin XCP_ON_TCP_IP
+        0x0100 /* XCP_ON_TCP_IP_VERSION */
+        44005 /* PORT */
+        ADDRESS "127.0.0.1"
+      /end XCP_ON_TCP_IP
+    /end IF_DATA
+
+    /begin MOD_COMMON ""
+      BYTE_ORDER             MSB_LAST
+      ALIGNMENT_BYTE         1
+      ALIGNMENT_WORD         2
+      ALIGNMENT_LONG         4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+    /end MOD_COMMON
+
+    /begin MOD_PAR ""
+      ADDR_EPK 0x0 /* @MemoryAddress@g_XCP_EpromIdentifier@ */
+      EPK      "66DC560E026149A3923E49D8EEE17103"
+
+      /begin MEMORY_SEGMENT VEOS_CAL ""
+        DATA
+        FLASH
+        EXTERN
+        0x0 /* @MemorySectionStartAddress@VEOS_CAL@ */ /* START_ADDRESS */
+        0x0 /* @MemorySectionSize@VEOS_CAL@ */ /* SIZE */
+        -1 -1 -1 -1 -1 /* OFFSETS */
+
+        /begin IF_DATA XCP
+          /begin SEGMENT
+            0 /* SEGMENT_NUMBER */
+            2 /* NUMBER_OF_PAGES */
+            0 /* ADDRESS_EXTENSION */
+            0 /* COMPRESSION_METHOD */
+            0 /* ENCRYPTION_METHOD */
+
+            /begin PAGE
+              0 /* PAGE_NUMBER */
+              ECU_ACCESS_DONT_CARE
+              XCP_READ_ACCESS_DONT_CARE
+              XCP_WRITE_ACCESS_DONT_CARE
+            /end PAGE
+
+            /begin PAGE
+              1 /* PAGE_NUMBER */
+              ECU_ACCESS_DONT_CARE
+              XCP_READ_ACCESS_DONT_CARE
+              XCP_WRITE_ACCESS_NOT_ALLOWED
+            /end PAGE
+          /end SEGMENT
+        /end IF_DATA
+      /end MEMORY_SEGMENT
+    /end MOD_PAR
+
+    /begin RECORD_LAYOUT VEOS_Scalar_BOOLEAN
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_UBYTE
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_BYTE
+      FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_UWORD
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_ULONG
+      FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_LONG
+      FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_FLOAT32_IEEE
+      FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT VEOS_Scalar_FLOAT64_IEEE
+      FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC Sab_PowerOn ""
+      VALUE
+      0x0000 /* @MemoryAddress@Sab_StartupVpu@ */ /* Address */
+      VEOS_Scalar_UBYTE /* Record Layout */
+      0 /* Maximum Difference */
+      OnOffScalingSabStateMgmt /* Conversion Method */
+      0 /* Lower Limit */
+      1 /* Upper Limit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC Sab_Ignition ""
+      VALUE
+      0x0000 /* @MemoryAddress@Sab_ResetVpu@ */ /* Address */
+      VEOS_Scalar_UBYTE /* Record Layout */
+      0 /* Maximum Difference */
+      OnOffScalingSabStateMgmt /* Conversion Method */
+      0 /* Lower Limit */
+      1 /* Upper Limit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC BusConnectionState ""
+      VALUE
+      0x0000 /* @MemoryAddress@g_VEOS_DisconnectBuses@ */ /* Address */
+      VEOS_Scalar_UBYTE /* Record Layout */
+      0 /* Maximum Difference */
+      VpuEnvironmentConnection /* Conversion Method */
+      0 /* Lower Limit */
+      1 /* Upper Limit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VpuConnectionState ""
+      VALUE
+      0x0000 /* @MemoryAddress@g_VEOS_DisconnectCompletely@ */ /* Address */
+      VEOS_Scalar_UBYTE /* Record Layout */
+      0 /* Maximum Difference */
+      VpuEnvironmentConnection /* Conversion Method */
+      0 /* Lower Limit */
+      1 /* Upper Limit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VpuPortsConnectionState ""
+      VALUE
+      0x0000 /* @MemoryAddress@g_VEOS_DisconnectPorts@ */ /* Address */
+      VEOS_Scalar_UBYTE /* Record Layout */
+      0 /* Maximum Difference */
+      VpuEnvironmentConnection /* Conversion Method */
+      0 /* Lower Limit */
+      1 /* Upper Limit */
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT EcuM_StartupTwoTask_TaskCallCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskInvocations + UINT32(5)[0]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EcuM_StartupTwoTask_OverrunCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskOverruns + UINT32(5)[0]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EcuM_StartupTwoTask_TurnaroundTime ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_MockTaskTurnAround@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT MainFunctionTask3_1ms_TaskCallCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskInvocations + UINT32(5)[1]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT MainFunctionTask3_1ms_OverrunCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskOverruns + UINT32(5)[1]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT MainFunctionTask3_1ms_TurnaroundTime ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_MockTaskTurnAround@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task0_10ms_TaskCallCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskInvocations + UINT32(5)[2]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task0_10ms_OverrunCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskOverruns + UINT32(5)[2]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task0_10ms_TurnaroundTime ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_MockTaskTurnAround@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task1_TaskCallCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskInvocations + UINT32(5)[3]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task1_OverrunCount ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_NumberOfTaskOverruns + UINT32(5)[3]@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Task1_TurnaroundTime ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_MockTaskTurnAround@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SimulationTime ""
+      FLOAT64_IEEE
+      VEOS_Float64_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      -1.7976931348623157E+308 /* Lower Limit */
+      1.7976931348623157E+308 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_VEOS_CurrentSimulationTime@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SimulationCounter_1ns ""
+      A_INT64
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      -9223372036854775808 /* Lower Limit */
+      9223372036854775807 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_VEOS_CurrentSimulationCounter_1ns@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Active_ErrorSet ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@XilApiEesPortActiveErrorSet@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Error_Activated ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@XilApiEesPortErrorActivated@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Error_Switching ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@XilApiEesPortErrorSwitching@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Flags ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@XilApiEesPortFlags@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Trigger ""
+      ULONG
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      4294967295 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@XilApiEesPortTrigger@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT RuntimeVersion ""
+      UWORD
+      VEOS_Integer_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      0 /* Lower Limit */
+      65535 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@ga_VEOS_Version@ */
+      MATRIX_DIM 4 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT RealTimeDeviation ""
+      FLOAT64_IEEE
+      VEOS_Float64_Identity /* Conversion Method */
+      1 /* Resolution */
+      0 /* Accuracy */
+      -1.7976931348623157E+308 /* Lower Limit */
+      1.7976931348623157E+308 /* Upper Limit */
+      ECU_ADDRESS 0x0000 /* @MemoryAddress@g_VEOS_SimApi_RealTimeDeviation@ */
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD VEOS_Integer_Identity
+      "CompuMethod for VEOS Integer data types"
+      IDENTICAL
+      "%.0" /* Format */
+      "" /* Unit */
+    /end  COMPU_METHOD
+
+    /begin COMPU_METHOD OnOffScalingSabStateMgmt
+        ""
+        TAB_VERB
+        "%0.0"
+        ""
+        COMPU_TAB_REF  OnOffScalingSabStateMgmt_COMPU_VTAB
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE OnOffScalingSabStateMgmt_COMPU_VTAB
+        ""
+        2
+        0 0 "OFF"
+        1 1 "ON"
+
+        DEFAULT_VALUE "UNKNOWN"
+    /end COMPU_VTAB_RANGE
+
+    /begin COMPU_METHOD VEOS_Float64_Identity
+      "CompuMethod for VEOS Float64 data types"
+      IDENTICAL
+      "%.15" /* Format */
+      "" /* Unit */
+    /end  COMPU_METHOD
+
+    /begin COMPU_METHOD VpuEnvironmentConnection
+        ""
+        TAB_VERB
+        "%0.0"
+        ""
+        COMPU_TAB_REF  VpuEnvironmentConnection_COMPU_VTAB
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE VpuEnvironmentConnection_COMPU_VTAB
+        ""
+        2
+        0 0 "CONNECTED"
+        1 1 "DISCONNECTED"
+
+        DEFAULT_VALUE "UNKNOWN"
+    /end COMPU_VTAB_RANGE
+
+    /begin FUNCTION Simulation_and_RTOS ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        Task_Information_Variables
+        Simulation
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Task_Information_Variables ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        EcuM_StartupTwoTask
+        MainFunctionTask3_1ms
+        Task0_10ms
+        Task1
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION EcuM_StartupTwoTask ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        EcuM_StartupTwoTask_TaskCallCount
+        EcuM_StartupTwoTask_OverrunCount
+        EcuM_StartupTwoTask_TurnaroundTime
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION MainFunctionTask3_1ms ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        MainFunctionTask3_1ms_TaskCallCount
+        MainFunctionTask3_1ms_OverrunCount
+        MainFunctionTask3_1ms_TurnaroundTime
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Task0_10ms ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        Task0_10ms_TaskCallCount
+        Task0_10ms_OverrunCount
+        Task0_10ms_TurnaroundTime
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Task1 ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        Task1_TaskCallCount
+        Task1_OverrunCount
+        Task1_TurnaroundTime
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Simulation ""
+      /begin REF_CHARACTERISTIC
+        Sab_PowerOn
+        Sab_Ignition
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        SimulationTime
+        SimulationCounter_1ns
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION XIL_API ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        EESPort
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION EESPort ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        Active_ErrorSet
+        Error_Activated
+        Error_Switching
+        Flags
+        Trigger
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Diagnostics ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        Failure_Simulation
+        ApplicationProcess
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Failure_Simulation ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        Simulator
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Simulator ""
+      /begin REF_CHARACTERISTIC
+        BusConnectionState
+        VpuConnectionState
+        VpuPortsConnectionState
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION ApplicationProcess ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+        Runtime
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin FUNCTION Runtime ""
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+
+      /begin LOC_MEASUREMENT
+        RuntimeVersion
+        RealTimeDeviation
+      /end LOC_MEASUREMENT
+
+      /begin SUB_FUNCTION
+      /end SUB_FUNCTION
+    /end FUNCTION
+
+    /* ---------------------------------------------------------------------- */
+    /* End of sections added by VEOS.                                         */
+    /* ---------------------------------------------------------------------- */
+
+ 
+
+    /begin COMPU_METHOD VOID 
+        ""
+        RAT_FUNC
+        "%12.6f"
+        ""
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD boolean 
+        ""
+        TAB_VERB
+        "%g"
+        ""
+        COMPU_TAB_REF  boolean_COMPU_VTAB
+    /end COMPU_METHOD
+    /begin COMPU_VTAB boolean_COMPU_VTAB
+         ""
+        TAB_VERB
+        2 /* Number of pairs */
+        0 "FALSE"
+        1 "TRUE"
+    /end COMPU_VTAB
+
+    /begin COMPU_METHOD NO_COMPU_METHOD_2 
+        "Automatically generated by dSPACE ASAP2 Import"
+        RAT_FUNC
+        "%6.3f"
+        ""
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD __Identity 
+        ""
+        RAT_FUNC
+        "%g"
+        ""
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD EcuM_CurrentStateScaling 
+        ""
+        TAB_VERB
+        "%g"
+        ""
+        COMPU_TAB_REF  EcuM_CurrentStateScaling_COMPU_VTAB
+    /end COMPU_METHOD
+    /begin COMPU_VTAB_RANGE  EcuM_CurrentStateScaling_COMPU_VTAB
+        ""
+        21
+        16 16 "STARTUP"
+        17 17 "STARTUP_ONE"
+        18 18 "STARTUP_TWO"
+        32 32 "WAKEUP"
+        33 33 "WAKEUP_ONE"
+        34 34 "WAKEUP_VALIDATION"
+        35 35 "WAKEUP_REACTION"
+        36 36 "WAKEUP_TWO"
+        37 37 "WAKEUP_WAKESLEEP"
+        38 38 "WAKEUP_TTII"
+        48 48 "RUN"
+        50 50 "APP_RUN"
+        51 51 "APP_POST_RUN"
+        64 64 "SHUTDOWN"
+        68 68 "PREP_SHUTDOWN"
+        73 73 "GO_SLEEP"
+        77 77 "GO_OFF_ONE"
+        78 78 "GO_OFF_TWO"
+        80 80 "SLEEP"
+        128 128 "OFF"
+        144 144 "RESET"
+        DEFAULT_VALUE "INVALID_STATE"
+    /end COMPU_VTAB_RANGE 
+
+    /begin COMPU_METHOD EcuM_NextModeScaling 
+        ""
+        TAB_VERB
+        "%g"
+        ""
+        COMPU_TAB_REF  EcuM_NextModeScaling_COMPU_VTAB
+    /end COMPU_METHOD
+    /begin COMPU_VTAB_RANGE  EcuM_NextModeScaling_COMPU_VTAB
+        ""
+        6
+        0 0 "POST_RUN"
+        1 1 "RUN"
+        2 2 "SHUTDOWN"
+        3 3 "SLEEP"
+        4 4 "STARTUP"
+        5 5 "WAKE_SLEEP"
+        DEFAULT_VALUE "STARTUP"
+    /end COMPU_VTAB_RANGE 
+
+    /begin RECORD_LAYOUT UBYTE__BASE_TYPE_RL
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SBYTE__BASE_TYPE_RL
+        FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT UWORD__BASE_TYPE_RL
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SWORD__BASE_TYPE_RL
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT ULONG__BASE_TYPE_RL
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SLONG__BASE_TYPE_RL
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT FLOAT32_IEEE__BASE_TYPE_RL
+        FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT FLOAT64_IEEE__BASE_TYPE_RL
+        FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT float32__BASE_TYPE_RL
+        FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT boolean__BASE_TYPE_RL
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT uint8__BASE_TYPE_RL
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SWORD_2__BASE_TYPE_RL
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SLONG_2__BASE_TYPE_RL
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT SBYTE_2__BASE_TYPE_RL
+        FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT UBYTE_2__BASE_TYPE_RL
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT ULONG_2__BASE_TYPE_RL
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT EcuM_Scalar_UBYTE
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT FLOAT32_IEEE_2__BASE_TYPE_RL
+        FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT FLOAT64_IEEE_2__BASE_TYPE_RL
+        FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT UWORD_2__BASE_TYPE_RL
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin MEASUREMENT ActuatorSWC_CC_StateNew_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_3@ */
+        SYMBOL_LINK "Rte_Signal_3" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ActuatorSWC_TargetSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_6@ */
+        SYMBOL_LINK "Rte_Signal_6" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_Counter_Value 
+        ""
+        UBYTE 
+        VOID 
+        0 
+        0 
+        0 255 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_4@ */
+        SYMBOL_LINK "Rte_Signal_4" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_AcceleratorPedal_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_7@ */
+        SYMBOL_LINK "Rte_Signal_7" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_BrakePedal_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_8@ */
+        SYMBOL_LINK "Rte_Signal_8" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_DistanceLeading_Value 
+        "A distance value in meters"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_11@ */
+        SYMBOL_LINK "Rte_Signal_11" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_CC_StateNew_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_3@ */
+        SYMBOL_LINK "Rte_Signal_3" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EmergencyBrake1_DistanceLeading_Value 
+        "A distance value in meters"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_11@ */
+        SYMBOL_LINK "Rte_Signal_11" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ActuatorSWC_Accelerate_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_1@ */
+        SYMBOL_LINK "Rte_Signal_1" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_Accelerate_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_1@ */
+        SYMBOL_LINK "Rte_Signal_1" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TargetSpeedControl_TargetSpeedButtonState_Value 
+        "the state of the CC target speed adjustment button(s)\r\n\r\n1 = increase target speed by 5 km/h\r\n2 = decrease target speed by 5 km/h\r\nall other values = no action\r\n"
+        UBYTE 
+        VOID 
+        0 
+        0 
+        0 255 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_12@ */
+        SYMBOL_LINK "Rte_Signal_12" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ActuatorSWC_EmergencyBrake_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_5@ */
+        SYMBOL_LINK "Rte_Signal_5" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EmergencyBrake1_CurrentSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_10@ */
+        SYMBOL_LINK "Rte_Signal_10" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ActuatorSWC_Counter_Value 
+        ""
+        UBYTE 
+        VOID 
+        0 
+        0 
+        0 255 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_4@ */
+        SYMBOL_LINK "Rte_Signal_4" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_CC_State_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_9@ */
+        SYMBOL_LINK "Rte_Signal_9" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_CC_State_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_9@ */
+        SYMBOL_LINK "Rte_Signal_9" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_TargetSpeedButtonState_Value 
+        "the state of the CC target speed adjustment button(s)\r\n\r\n1 = increase target speed by 5 km/h\r\n2 = decrease target speed by 5 km/h\r\nall other values = no action\r\n"
+        UBYTE 
+        VOID 
+        0 
+        0 
+        0 255 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_12@ */
+        SYMBOL_LINK "Rte_Signal_12" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TargetSpeedControl_TargetSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_6@ */
+        SYMBOL_LINK "Rte_Signal_6" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_CurrentSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_10@ */
+        SYMBOL_LINK "Rte_Signal_10" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EmergencyBrake1_CC_StateNew_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_3@ */
+        SYMBOL_LINK "Rte_Signal_3" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SensorSWC_AcceleratorPedal_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_7@ */
+        SYMBOL_LINK "Rte_Signal_7" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT ActuatorSWC_Brake_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_2@ */
+        SYMBOL_LINK "Rte_Signal_2" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_BrakePedal_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_8@ */
+        SYMBOL_LINK "Rte_Signal_8" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_TargetSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_6@ */
+        SYMBOL_LINK "Rte_Signal_6" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EmergencyBrake1_EmergencyBrake_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_5@ */
+        SYMBOL_LINK "Rte_Signal_5" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_CurrentSpeed_Value 
+        "A speed value in km/h"
+        FLOAT32_IEEE 
+        VOID 
+        0 
+        0 
+        -3.402823e+38 3.402823e+38 
+        FORMAT "%12.6f"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_10@ */
+        SYMBOL_LINK "Rte_Signal_10" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CruiseControl_Brake_Value 
+        ""
+        UBYTE 
+        boolean 
+        0 
+        0 
+        0 1 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@Rte_Signal_2@ */
+        SYMBOL_LINK "Rte_Signal_2" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT NumberPostRunRequests 
+        "Current number of POST RUN requests of the EcuM"
+        UBYTE 
+        __Identity 
+        0 
+        0 
+        0 255 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@EcuM_CurrentNumberOfPostRunRequests + UINT8(0)[0]@ */
+        SYMBOL_LINK "EcuM_CurrentNumberOfPostRunRequests + UINT8(0)[0]" 0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CurrentState 
+        "Current state of the EcuM"
+        UBYTE 
+        EcuM_CurrentStateScaling 
+        0 
+        0 
+        0 255 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@EcuM_CurrentState + UINT8(0)[0]@ */
+        SYMBOL_LINK "EcuM_CurrentState + UINT8(0)[0]" 0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC NextMode 
+        "The EcuM switches to this mode unconditionally."
+        VALUE 
+        0x0  /* @MemoryAddress@EcuM_NextMode@ */
+        EcuM_Scalar_UBYTE
+        0
+        EcuM_NextModeScaling 
+        0 255 
+        
+        FORMAT "%g"
+        SYMBOL_LINK "EcuM_NextMode" 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT NumberRunRequests 
+        "Current number of RUN requests of the EcuM"
+        UBYTE 
+        __Identity 
+        0 
+        0 
+        0 255 
+        FORMAT "%g"
+        ECU_ADDRESS  0x0 /* @MemoryAddress@EcuM_CurrentNumberOfRunRequests + UINT8(0)[0]@ */
+        SYMBOL_LINK "EcuM_CurrentNumberOfRunRequests + UINT8(0)[0]" 0
+    /end MEASUREMENT
+
+
+        /begin GROUP ActuatorSWC /* Name */
+            "" /* LongIdentifier */
+            ROOT
+            /begin REF_MEASUREMENT
+                ActuatorSWC_CC_StateNew_Value
+                ActuatorSWC_TargetSpeed_Value
+                ActuatorSWC_Accelerate_Value
+                ActuatorSWC_EmergencyBrake_Value
+                ActuatorSWC_Counter_Value
+                ActuatorSWC_Brake_Value
+            /end REF_MEASUREMENT
+        /end GROUP
+
+        /begin GROUP SensorSWC /* Name */
+            "" /* LongIdentifier */
+            ROOT
+            /begin REF_MEASUREMENT
+                SensorSWC_Counter_Value
+                SensorSWC_BrakePedal_Value
+                SensorSWC_DistanceLeading_Value
+                SensorSWC_CC_State_Value
+                SensorSWC_TargetSpeedButtonState_Value
+                SensorSWC_CurrentSpeed_Value
+                SensorSWC_AcceleratorPedal_Value
+            /end REF_MEASUREMENT
+        /end GROUP
+
+        /begin GROUP CruiseControl /* Name */
+            "" /* LongIdentifier */
+            ROOT
+            /begin REF_MEASUREMENT
+                CruiseControl_AcceleratorPedal_Value
+                CruiseControl_CC_StateNew_Value
+                CruiseControl_Accelerate_Value
+                CruiseControl_CC_State_Value
+                CruiseControl_BrakePedal_Value
+                CruiseControl_TargetSpeed_Value
+                CruiseControl_CurrentSpeed_Value
+                CruiseControl_Brake_Value
+            /end REF_MEASUREMENT
+        /end GROUP
+
+        /begin GROUP EmergencyBrake /* Name */
+            "" /* LongIdentifier */
+            ROOT
+            /begin REF_MEASUREMENT
+                EmergencyBrake1_DistanceLeading_Value
+                EmergencyBrake1_CurrentSpeed_Value
+                EmergencyBrake1_CC_StateNew_Value
+                EmergencyBrake1_EmergencyBrake_Value
+            /end REF_MEASUREMENT
+        /end GROUP
+
+        /begin GROUP TargetSpeedControl /* Name */
+            "" /* LongIdentifier */
+            ROOT
+            /begin REF_MEASUREMENT
+                TargetSpeedControl_TargetSpeedButtonState_Value
+                TargetSpeedControl_TargetSpeed_Value
+            /end REF_MEASUREMENT
+        /end GROUP
+
+        /begin FUNCTION BswModules /* Name */
+            "" /* LongIdentifier */
+            /begin SUB_FUNCTION
+                EcuM
+            /end SUB_FUNCTION
+        /end FUNCTION
+
+        /begin FUNCTION EcuM /* Name */
+            "" /* LongIdentifier */
+            /begin REF_CHARACTERISTIC
+                NextMode
+            /end REF_CHARACTERISTIC
+            /begin LOC_MEASUREMENT
+                NumberPostRunRequests
+                CurrentState
+                NumberRunRequests
+            /end LOC_MEASUREMENT
+        /end FUNCTION
+
+
+    /end  MODULE
+/end  PROJECT

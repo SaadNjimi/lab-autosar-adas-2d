@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created with SystemDesk 5.6.0.13023-->
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="01f74b7b-60cb-4ac0-937d-e842e9921f4e">
+      <SHORT-NAME>ArPackage</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="ad62f91c-79e9-46f7-a027-96ba1caf69da">
+          <SHORT-NAME>EcuConfiguration_EcuInstance</SHORT-NAME>
+          <ELEMENTS>
+            <ECUC-MODULE-CONFIGURATION-VALUES>
+              <SHORT-NAME>Dap</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SD_CUSTOM_PROPERTIES">
+                    <SD GID="WorkingDirectory">&lt;SystemDir&gt;\&lt;EcuConfigurationName&gt;\&lt;ModuleConfigurationName&gt;</SD>
+                    <SD GID="DefinitionFilename">&lt;InstallationDir&gt;\Bsw\ModuleDefs\dSPACE_EcuCParamDef_ViVa_3.1.arxml</SD>
+                  </SDG>
+                  <SDG GID="BUILD_ACTION_MANIFESTS">
+                    <SDX-REF DEST="BUILD-ACTION-MANIFEST">/BuildActionManifest/dSPACE_ViVa/DapPlugin</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-MODULE-DEF">/dSPACE_Sim/Dap</DEFINITION-REF>
+              <ECUC-DEF-EDITION>3.1.0</ECUC-DEF-EDITION>
+              <CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="cd23881d-219e-4739-9000-fb263eea0f82">
+                  <SHORT-NAME>TestPoints</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/dSPACE_Sim/Dap/DapContext</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/dSPACE_Sim/Dap/DapContext/DapContextKind</DEFINITION-REF>
+                      <VALUE>TestPoints</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </CONTAINERS>
+            </ECUC-MODULE-CONFIGURATION-VALUES>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
