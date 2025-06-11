@@ -23,5 +23,9 @@ Key features:
    - **Cruise Control**: Press `C` to enable, `↑/↓` arrows to adjust speed.  
    - **Emergency Brake**: Spawn vehicles with `L` to trigger braking.  
 
+## Screenshots
+Here are some visual glimpses of the application's interface and functionality:
+![SWCS](assets/screenshots/SWCS.jpg)
+
 ## 🙏 Acknowledgments  
 *Dr. Batbayar Battseren* for lab guidance.  
