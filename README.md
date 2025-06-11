@@ -25,10 +25,25 @@ Key features:
 
 ## Screenshots
 Here are some visual glimpses of the application's interface and functionality:
+### Architecture View
 ![SWCS](assets/screenshots/SWCs.jpeg)
+### Main and Adas Composition
 ![MainComposition](assets/screenshots/Main-Composition.jpeg)
 ![ADASComposition](assets/screenshots/ADAS-Composition.jpeg)
+### 2d Simulation
 ![2dSimulation](assets/screenshots/2d-simulation.jpeg)
+
+## Video Demonstration
+
+Witness the **Cruise Control** and **Emergency Brake** features in action!
+
+You can find a direct video demonstration in the `assets/videos/` folder of this repository:
+
+[▶️ Watch the Demo Video Here](assets/videos/CC-EmergencyBreak.mp4)
+
+*(Note: Some browsers may download the video rather than playing it inline. Ensure you have a suitable media player for `.mp4` files.)*
+
+---
 
 ## 🙏 Acknowledgments  
 *Dr. Batbayar Battseren* for lab guidance.  
