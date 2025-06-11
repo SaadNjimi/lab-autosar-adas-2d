@@ -37,9 +37,9 @@ Here are some visual glimpses of the application's interface and functionality:
 
 Witness the **Cruise Control** and **Emergency Brake** features in action!
 
-You can find a direct video demonstration in the `assets/videos/` folder of this repository:
+You can find a direct video demonstration in the `assets/` folder of this repository:
 
-[▶️ Watch the Demo Video Here](assets/videos/CC-EmergencyBreak.mp4)
+[▶️ Watch the Demo Video Here](assets/CC-EmergencyBreak.mp4)
 
 *(Note: Some browsers may download the video rather than playing it inline. Ensure you have a suitable media player for `.mp4` files.)*
 
