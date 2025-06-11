@@ -25,7 +25,10 @@ Key features:
 
 ## Screenshots
 Here are some visual glimpses of the application's interface and functionality:
-![SWCS](assets/screenshots/SWCS.jpg)
+![SWCS](assets/screenshots/SWCs.jpeg)
+![MainComposition](assets/screenshots/Main-Composition.jpeg)
+![ADASComposition](assets/screenshots/ADAS-Composition.jpeg)
+![2dSimulation](assets/screenshots/2d-simulation.jpeg)
 
 ## 🙏 Acknowledgments  
 *Dr. Batbayar Battseren* for lab guidance.  
